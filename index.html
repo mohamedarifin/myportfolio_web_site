@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    body{
+        height: 100vh;
+        width: 100vw;
+        position: relative;
+        
+        
+    }
+    body::-webkit-scrollbar{
+        display: none;
+    }
+    .project::-webkit-scrollbar{
+        display: none;
+    }
+    nav{
+        width: 100vw;
+        height: 70px;
+        position: fixed;
+    }
+    .home{
+        width: 100vw;
+        height: 100vh;
+    }
+    .nav_container{
+        width: 100%;
+        height: 100%;
+    }
+    .home_content{
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-weight: bolder;
+    }
+    .project{
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        left:-100%;
+        background: rgb(255, 255, 255);
+        z-index: 3;
+    
+    }
+    
+    .project_outer_nav{
+        width: 100vw;
+        height: 70px;
+        z-index: 2;
+        position: fixed;
+    }
+    .project_nav{
+        width: 100%;
+        height: 100%;
+    }
+    .project_content{
+        height: 100%;
+        width: 100vw;
+        overflow: scroll;
+        margin-top:70px;
+    }
+    img{
+        width: 300px;
+        height: 200px;
+        padding: 20px;
+    }
+    .basics_products{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .project_content::-webkit-scrollbar{
+        display: none;
+    }
+    .b_product{
+        width: 230px;
+        height:400px;
+    }
+    
+    .close{
+        position: absolute;
+        top: 0;
+        left: -100%;
+    }
+    .about{
+        height: 100vh;
+        width: 100vw;
+        position: absolute;
+        top: 0;
+        left: -100%;
+        background: rgb(255, 255, 255);
+    
+    }
+    .project_outer_nav{
+        width: 100vw;
+        height: 70px;
+    }
+    .about_nav{
+        width: 100%;
+        height: 100%;
+    }
+    
+    .menu_bar_slide{
+        cursor: pointer;
+    }
+    .menu_bar_nav{
+        width: 100vw;
+        height: 70px;
+        position: fixed;
+        top: 80px;
+        transform: scale(0);
+        transition: 0s;
+    }
+    .menu_bar_nav_lists{
+        width: 50px;
+        height: 50px;
+        text-align: center;
+        cursor: pointer;
+        
+    }
+    .menu_bar_nav_lists:hover{
+        background: rgb(49, 48, 48);
+    }
+    .menu_bar_nav_lists:active{
+        background: rgb(49, 48, 48);
+    }
+    .menu_bar_in{
+        width: 250px;
+        height: 70px;
+        box-shadow: 0px 0px 5px black;
+    
+    }
+    .menu_bar_nav_lists p{
+        font-size: 10px;
+        text-align: center;
+    }
+    .trans{
+        transform: scale(1);
+        transition: 0.2s;
+    }
+    .about{
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+     }
+    .about_outer_nav{
+        width: 100vw;
+        height: 70px;
+
+     }
+    .about_nav{
+        height: 100%;
+        width: 100%;
+     }
+    .about_content p{
+        text-align: justify;
+     }
+    .contact_page{
+        height: 100vh;
+        width: 100vw;
+        background: white;
+        position: absolute;
+        top: 0;
+        left: -100%;
+     }
+    .contact_title_card_fade{
+        width: 100vw;
+        height: 70px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+     }
+    .contact_title_card{
+        width: 100%;
+        height: 100%;
+     }
+    .open{
+        position: absolute;
+        top: 0;
+        left: 0%;
+    }
+    .img_content{
+        width: 300px;
+        height: 300px;
+        margin-top: 80px;
+        border-radius: 50%;
+        padding: 10px;
+    }
+    .img_content img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 70%;
+        box-shadow:inset 0px 0px 25px rgb(0, 0, 0),inset 0px 0px 50px rgb(0, 0, 0),inset 0px 0px 75px rgb(0, 0, 0),inset 0px 0px 100px rgb(0, 0, 0),inset 0px 0px 100px rgb(0, 0, 0),inset 0px 0px 100px rgb(0, 0, 0), 0px 0px 20px rgb(0, 0, 0);
+    }
+    .about_img{
+        width: 300px;
+        height: 300px;
+    }
+    .about_img img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    </style>
+</head>
+<body>
+    <nav class="p-2 position-fixed top-0">
+        <div class="nav_container container-fluid bg-black d-flex justify-content-between align-items-center rounded p-1 ps-4">
+            <h3 class="nav_title text-white">Port<span class="text-danger">folio</span></h3>
+            <div class="menu_bar text-white pe-4 d-none d-sm-block">
+                <button class="home_btn btn btn-black text-white fw-medium fs-5 p-2">Home</button>
+                <button class="project_btn btn btn-black text-white fw-medium fs-5 p-2">Project</button>
+                <button class="about_btn btn btn-black text-white fw-medium fs-5 p-2">About</button>
+                <button class="contact_btn btn btn-black text-white fw-medium fs-5 p-2">Contact</button>
+            </div>
+            <div class="menu_bar_slide me-3 d-sm-none "><i class="bi bi-list text-white fs-2 fw-bolder  p-2"></i></div>
+        </div>
+    </nav>
+    <div class="menu_bar_nav d-flex align-items-center justify-content-center p-1">
+        <div class="menu_bar_in bg-black d-flex align-items-center justify-content-evenly rounded">
+            <div class="menu_home menu_bar_nav_lists rounded">
+                <i class="bi bi-house p-2 text-white rounded"></i>
+                <p class="text-white">Home</p>
+            </div>
+            <div class="menu_project menu_bar_nav_lists rounded">
+                <i class="bi bi-filetype-html p-2 text-white rounded"></i>
+                <p class="text-white">Project</p>
+            </div>
+            <div class="menu_about menu_bar_nav_lists rounded">
+                <i class="bi bi-person p-2 text-white rounded"></i>
+                <p class="text-white">About</p>
+            </div>
+            <div class="menu_contact menu_bar_nav_lists rounded">
+                <i class="bi bi-telephone p-2 text-white rounded"></i>
+                <p class="text-white">Contact</p>
+            </div>
+        </div>
+    </div>
+    <div class="container-md home d-flex justify-content-center justify-content-sm-between  align-items-center">
+        <div class="home_content mt-5 pt-5">
+            <h1>Hi ,I am</h1>
+            <h1> Mohamed Arifin</h1>
+            <h2 class="text-danger">MERN Stack Developer</h2>
+            <div class="home_logo_links mb-4">
+                <button type="button" class="rounded rounded-circle btn btn-outline-dark bg-black me-2"><a href="https://github.com/mohamedarifin" class=" text-white  fs-4"><i class="bi bi-github"></i></a></button>
+
+                <button type="button" class="rounded rounded-circle btn btn-outline-dark bg-black me-2"><a href="mailto:alhamdulillah224728@gmail.com" class=" text-white  fs-4"><i class="bi bi-envelope"></i></a></button>
+
+                <button type="button" class="rounded rounded-circle btn btn-outline-dark bg-black me-2"><a href="https://www.linkedin.com/in/mohamed-arifin-6a129b329?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class=" text-white  fs-4"><i class="bi bi-linkedin"></i></a></button>
+            </div>
+            <button type="button" class="btn btn-outline-dark bg-black fs-5">
+                <a href="resume.html" class="text-decoration-none text-white">Resume</a>
+            </button>
+        </div>
+        <div class="img_content text-center d-sm-block d-none">
+            <img src="portimg.jpg" alt="">
+        </div>
+    </div>
+    <div class="project ">
+        <div class="project_outer_nav p-2">
+            <div class="project_nav d-flex justify-content-between align-items-center bg-black px-4 rounded">
+                <h3 class="nav_project_title text-white">Pro<span class="text-danger">ject</span></h3>
+                <button type="button" class="project_close text-white bg-black border border-0 outline outline-0 p-2 fw-bolder">✕</button>
+            </div>
+        </div>
+        <div class="container-fluid project_content  ">
+            <div class="project_list">
+                <h4 class="bg-danger p-2 px-4 rounded fw-medium ">Basics</h4>
+                <div class="basics_products">
+                    <div class="b_product">
+                        <div class="card">
+                            <img src="imgs\bmicalc.png" alt="" class="card-img-top p-1">
+                            <div class="card-body">
+                                <div class="card-title">BMI calculator</div>
+                            </div>
+                            <div class="card-footer d-flex justify-content-between align-items-center">
+                                <a href="https://github.com/mohamedarifin/BMI-calculator/commit/ec07754baecb714402f00dd319674939bf295703"  class="btn btn-primary">Code</a >
+                                <a href=" https://mohamedarifin.github.io/BMI-calculator/"  class="btn btn-success">Project</a >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="b_product ">
+                        <div class="card">
+                            <img src="imgs\weatherimg.png" alt="" class="card-img-top p-1">
+                            <div class="card-body">
+                                <div class="card-title">Weather APP</div>
+                            </div>
+                            <div class="card-footer d-flex justify-content-between align-items-center">
+                                <a href="https://github.com/mohamedarifin/weatherapp"  class="btn btn-primary">Code</a >
+                                <a href="https://mohamedarifin.github.io/weatherapp/"  class="btn btn-success">Project</a >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="b_product ">
+                        <div class="card">
+                            <img src="imgs\tictac.png" alt="" class="card-img-top p-1">
+                            <div class="card-body">
+                                <div class="card-title">Tic Tac Toe Game</div>
+                            </div>
+                            <div class="card-footer d-flex justify-content-between align-items-center">
+                                <a href="https://github.com/mohamedarifin/tictac/commit/935c555c72f422535e77714f3e72df15fef6288c"  class="btn btn-primary">Code</a >
+                                <a href="https://mohamedarifin.github.io/tictac/"  class="btn btn-success">Project</a >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="b_product ">
+                        <div class="card">
+                            <img src="imgs\qrcodegenerator.png" alt="" class="card-img-top p-1">
+                            <div class="card-body">
+                                <div class="card-title">Qr-code Generator</div>
+                            </div>
+                            <div class="card-footer d-flex justify-content-between align-items-center">
+                                <a href="https://github.com/mohamedarifin/Qr-Code_generator/commit/1121009f4c8687e7585afe33f3f118ee0fbd6d9c"  class="btn btn-primary">Code</a >
+                                <a href="https://mohamedarifin.github.io/Qr-Code_generator/"  class="btn btn-success">Project</a >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="project_list">
+                <h4 class="bg-danger p-2 px-4 rounded fw-medium ">Advanced</h4>
+                <div class="basics_products">
+                    <div class="b_product">
+                        <div class="card p-0">
+                            <img src="imgs\ecommerce.jpg" alt="" class="card-img-top p-1">
+                            <div class="card-body">
+                                <div class="card-title">E-commerce</div>
+                            </div>
+                            <div class="card-footer d-flex justify-content-between align-items-center">
+                                <a href="https://github.com/mohamedarifin/first-store"  class="btn btn-primary">Code</a >
+                                <a href="https://mohamedarifin.github.io/first-store/"  class="btn btn-success">Project</a >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="b_product ">
+                        <div class="card">
+                            <img src="imgs\snakegamejavascript.png" alt="" class="card-img-top p-1">
+                            <div class="card-body">
+                                <div class="card-title">Snake Game</div>
+                            </div>
+                            <div class="card-footer d-flex justify-content-between align-items-center">
+                                <a href="https://github.com/mohamedarifin/Bloody_Snake_Game/commit/d2d04796a0ada45e970b55770383318758d270e9"  class="btn btn-primary">Code</a >
+                                <a href=" https://mohamedarifin.github.io/Bloody_Snake_Game/    "  class="btn btn-success">Project</a >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <div class="about position-absolute">
+        <div class="about_outer_nav  p-2 position-fixed top-0 left-0">
+            <div class="about_nav d-flex justify-content-between align-items-center bg-black p-2 px-4 rounded">
+                <h3 class="nav_about_title text-white">A<span class="text-danger">bout</span></h3>
+                <button type="button" class="about_close text-white bg-black border border-0 outline outline-0 p-2 fw-bolder">✕</button>
+            </div>
+        </div>
+        <div class="container-md about_container d-flex justify-content-center justify-content-sm-between  align-items-center ">
+            <div class="home_content mt-5 pt-5">
+                <h4 class="fw-bolder fs-5 bg-black rounded p-2 d-inline text-white">About Me</h4>
+                <h5 class="fs-4 rounded  mt-3 fw-bolder">Hi, I’m Mohamed Arifin, a Full-Stack Web Developer</h5>
+                <p class="fw-medium  text-danger border border-2 border-dark rounded p-3 ">
+                with a Passion for Building Innovative Digital Solutions
+                in full-stack development. My journey in technology began with 
+                a love for problem-solving and a curiosity about how things work under the hood. This led me 
+                to pursue a degree in Computer Science and dive deeply into both front-end and back-end technologies.
+                </p>
+                <div class="location">
+                    <h6 class="fs-6 fw-medium mt-3"><i class="bi bi-telephone-fill p-2"></i>  Phone :+91 9944165517</h6>
+                    <h4 class="fs-6 fw-medium"> <i class="bi bi-geo-alt-fill p-2"></i>  Address :Ramanathapuram,Tamil Nadu.</h4>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <div class="contact_page">
+        <div class="contact_title_card_fade p-2">
+            <div class="contact_title_card d-flex justify-content-between align-items-center bg-black px-4 rounded">
+                <h3 class="contact_title text-white">Con<span class="text-danger">tact</span></h3>
+                <button type="button" class="contact_close text-white bg-black border border-0 outline outline-0 p-2 fw-bolder">✕</button>
+            </div>
+        </div>
+        <div class="container  pt-5">
+            <form action="/" method="post" class="row mt-5 pt-5">
+                <div class="col-12">
+                    <label for="username" class="form-label fw-bold">UserName</label>
+                    <input class="form-control fw-medium" type="text" name="username" id="username">
+                </div>
+                <div class="col-12">
+                    <label for="Email" class="form-label fw-bold">Email</label>
+                    <input class="form-control fw-medium" type="email" name="Email" id="Email">
+                </div>
+                <div class="col-12">
+                    <label for="message" class="form-label fw-bold">Send Message</label>
+                    <textarea class="form-control fw-medium"  name="message" id="message"></textarea>
+                </div>
+                <div class="col-12 mt-3 text-center  ">
+                    <button type="submit" class="btn btn-dark text-white d-block w-100 h-100 p-2 fw-bold">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        let project = document.querySelector(".project");
+let project_btn = document.querySelector(".project_btn");
+let project_close = document.querySelector(".project_close");
+
+let about = document.querySelector(".about");
+let about_btn = document.querySelector(".about_btn");
+let about_close = document.querySelector(".about_close");
+
+let menu_bar_slide = document.querySelector(".menu_bar_slide");
+let menu_bar_nav = document.querySelector(".menu_bar_nav");
+
+let menu_project = document.querySelector(".menu_project");
+menu_project.addEventListener("click",()=>{
+    project.classList.add("open");
+})
+
+let menu_about = document.querySelector(".menu_about");
+menu_about.addEventListener("click",()=>{
+    about.classList.add("open");
+})
+
+menu_bar_slide.addEventListener("click",()=>{
+    menu_bar_nav.classList.toggle("trans")
+})
+
+project_btn.addEventListener("click",()=>{
+    project.classList.add("open");
+})
+project_close.addEventListener("click",()=>{
+    project.classList.remove("open");
+})
+
+about_btn.addEventListener("click",()=>{
+    about.classList.add("open");
+})
+about_close.addEventListener("click",()=>{
+    about.classList.remove("open");
+})
+
+let contact_page = document.querySelector(".contact_page");
+let contact_btn = document.querySelector(".contact_btn");
+let contact_close = document.querySelector(".contact_close");
+let menu_contact = document.querySelector(".menu_contact");
+
+contact_btn.addEventListener("click",()=>{
+    contact_page.classList.add("open");  
+})
+contact_close.addEventListener("click",()=>{
+    contact_page.classList.remove("open");  
+})
+menu_contact.addEventListener("click",()=>{
+    console.log("hello");
+    contact_page.classList.add("open");
+    
+})
+    </script>
+</body>
+</html>
